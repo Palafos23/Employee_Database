@@ -2,9 +2,9 @@ const inquirer = require('inquirer');
 const choices = require('./index');
 const db = require('../server');
 const prompt = require('./questions');
+const fs = require('fs');
 
-
-function viewDepartments(){
+const viewDepartments = () => {
  const sql = `SELECT department.id AS ID, department.name AS Departments FROM department`;
       
  db.query(sql, (err, results) => {
@@ -13,7 +13,17 @@ function viewDepartments(){
     }else{     
     console.table(results);
     }
+    const data = JSON.stringify(results);
+
+    fs.writeFile('../db/departments.json', data, 'utf8', err => {
+      if (err) {
+      console.log(`err`)
+      } else {
+      console.log(`viewDepartments file successful`)
+      }
+   })
  })
+
 };
 
 function viewRoles(){

@@ -1,11 +1,11 @@
-const inquirer = require('inquirer');
-var prompt = inquirer.prompts;
+const fs = require('fs');
 
-prompt = [
+
+var prompt = [
     //addDepartment
       [{
         type: 'input',
-        name: 'name',
+        name: `name`,
         message: 'Enter Department name:',
       }],
     //addRole
@@ -79,6 +79,15 @@ prompt = [
     ]
 ]
 
+// const data = JSON.stringify(prompt[0]);
+
+// fs.writeFile('../db/db.json', data, 'utf8', err => {
+//   if (err) {
+//     console.log(`Error writing file: ${err}`)
+//   } else {
+//     console.log(`File is written successfully!`)
+//   }
+// })
     module.exports = prompt;
     
 

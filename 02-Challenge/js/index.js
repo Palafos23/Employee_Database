@@ -50,5 +50,4 @@ function choices() {
 }
 
 
-
 module.exports = choices;

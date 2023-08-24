@@ -3,6 +3,7 @@ VALUES (001, " Marketing"),
        (002, "Accounting"),
        (003, "Sales"),
        (004, "Human Resources");
+       
 
 INSERT INTO role (id, title, salary, department_id)
 VALUES(001, "marketing manager", 1000, 001),
