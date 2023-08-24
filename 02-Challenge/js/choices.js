@@ -42,7 +42,7 @@ function viewEmployees(){
         
       })
     }
-    
+
 function addDepartment(){
     const addDepartment = prompt[0];
         
@@ -66,7 +66,7 @@ function addDepartment(){
         
 function addRole(){
     const addRole = prompt[1];
-          inquirer
+        inquirer
           .prompt(addRole)
       
           .then((response) => {
@@ -86,11 +86,11 @@ function addRole(){
 
 function addEmployee(){
     const addEmployee = prompt[2];
-            inquirer
+        inquirer
             .prompt(addEmployee)
 
             .then((response) => {
-             
+             //the if statement below uses user input to place a null or int(EX. 001) into the manager variable
                 if(response.manager === null) {
                   var manager = null;
                 }else{
@@ -111,8 +111,58 @@ function addEmployee(){
             }
             )}
             )
+          } 
+          
+function updateEmployeeRole(){
+    const updateEmployeeRole = prompt[3];
+        inquirer
+            .prompt(updateEmployeeRole)
+
+            .then((response) => {
+              const sql = ` UPDATE employee 
+                            SET role_id = '${response.updateRole}' 
+                            WHERE first_name = '${response.firstName}' AND last_name = '${response.lastName}';`
+          
+          
+            db.query(sql, (err, results) => {
+              if(err) {
+                console.log('\n updated employee');
+              }else{
+                viewEmployees();
+              }
+            })
+          })
+          }
+function deleteRow(){
+    const deleteRow = prompt[4];
+        inquirer
+            .prompt(deleteRow)
+             .then((response) => {
+              //can only delete from children to parent, not parent to children.
+              //Ex. if the user wants to delete the HR Manager role, the employee with the role
+              //HR Manager must be deleted and then the the actual role itself can be deleted 
+              //because it not longer has a child to rely on it.
+              const sql = `DELETE FROM ${response.tables} WHERE id = ${response.id};`
+          
+              console.log(`DELETE FROM ${response.tables} WHERE id = ${response.id};`)
+            
+            db.query(sql, (err, results) => {
+            //uses an if statement with user inputed table to display matched table function.
+              if(err){
+                console.log(err)
+              }else{
+              console.log('\n deleted row');
+              if(response.tables === 'department'){
+                return viewDepartments();
+              }else if (response.tables === 'role'){
+                return viewRoles();
+              }else{
+                return viewEmployees();
+              }
+            }
+            })
+          })
           }  
-  
 
 
-module.exports = {viewDepartments, viewRoles, viewEmployees, addDepartment, addRole, addEmployee};
+module.exports = {viewDepartments, viewRoles, viewEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole, deleteRow};

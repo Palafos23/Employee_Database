@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const {viewDepartments, viewRoles, viewEmployees, addDepartment, addRole, addEmployee} = require('./choices.js');
+const {viewDepartments, viewRoles, viewEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole, deleteRow} = require('./choices.js');
 
 choices()
 function choices() {
@@ -48,5 +48,7 @@ function choices() {
       }
     });
 }
+
+
 
 module.exports = choices;
