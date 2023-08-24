@@ -13,17 +13,16 @@ const viewDepartments = () => {
     }else{     
     console.table(results);
     }
-    const data = JSON.stringify(results);
 
-    fs.writeFile('../db/departments.json', data, 'utf8', err => {
+    fs.writeFile('../db/departments.json', JSON.stringify(results, null, 4), 'utf8', err => {
       if (err) {
       console.log(`err`)
       } else {
-      console.log(`viewDepartments file successful`)
+      console.log(`Departments file successful`)
       }
+
    })
  })
-
 };
 
 function viewRoles(){
@@ -35,9 +34,17 @@ function viewRoles(){
         }else{     
         console.table(results);
         }
-        
-    })
-  }
+
+        fs.writeFile('../db/roles.json', JSON.stringify(results, null, 4), 'utf8', err => {
+            if (err) {
+            console.log(`err`)
+            } else {
+            console.log(`roles file successful`)
+            }
+         })
+
+       })
+    };
   
 function viewEmployees(){
     const sql = `SELECT employee.id AS ID, employee.first_name AS FIrstName, employee.last_name AS LastName, department.name AS Department, role.title AS Role, role.salary AS Salary, employee.manager_id AS ManagerID FROM employee JOIN role ON employee.role_id = role.id JOIN department ON role.department_id = department.id ORDER BY role_id;`;
@@ -49,7 +56,15 @@ function viewEmployees(){
         }else{     
         console.table(results);
         }
-        
+
+        fs.writeFile('../db/employees.json', JSON.stringify(results, null, 4), 'utf8', err => {
+            if (err) {
+            console.log(`err`)
+            } else {
+            console.log(`employees file successful`)
+            }
+         })
+
       })
     }
 

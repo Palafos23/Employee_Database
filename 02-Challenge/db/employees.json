@@ -1,0 +1,92 @@
+[
+    {
+        "ID": 7,
+        "FIrstName": "Tony",
+        "LastName": "Romo",
+        "Department": " Marketing",
+        "Role": "marketing manager",
+        "Salary": "1000",
+        "ManagerID": null
+    },
+    {
+        "ID": 2,
+        "FIrstName": "Joseph",
+        "LastName": "Palafos",
+        "Department": " Marketing",
+        "Role": "marketing assistant",
+        "Salary": "2000",
+        "ManagerID": 1
+    },
+    {
+        "ID": 3,
+        "FIrstName": "Aaron",
+        "LastName": "Rodgers",
+        "Department": "Accounting",
+        "Role": "Accounting Manager",
+        "Salary": "1000",
+        "ManagerID": null
+    },
+    {
+        "ID": 4,
+        "FIrstName": "Mark",
+        "LastName": "Sanchez",
+        "Department": "Accounting",
+        "Role": "Accountant",
+        "Salary": "2000",
+        "ManagerID": 3
+    },
+    {
+        "ID": 5,
+        "FIrstName": "Kyler",
+        "LastName": "Murray",
+        "Department": "Sales",
+        "Role": "Sales Manager",
+        "Salary": "3500",
+        "ManagerID": null
+    },
+    {
+        "ID": 6,
+        "FIrstName": "Tom",
+        "LastName": "Brady",
+        "Department": "Sales",
+        "Role": "Sales Associate",
+        "Salary": "1500",
+        "ManagerID": 5
+    },
+    {
+        "ID": 1,
+        "FIrstName": "Deisy",
+        "LastName": "Martinez",
+        "Department": "Human Resources",
+        "Role": "HR Manager",
+        "Salary": "3500",
+        "ManagerID": null
+    },
+    {
+        "ID": 9,
+        "FIrstName": "Marcus",
+        "LastName": "Mariota",
+        "Department": "Operation Management",
+        "Role": "Operation Manager",
+        "Salary": "4000",
+        "ManagerID": null
+    },
+    {
+        "ID": 10,
+        "FIrstName": "Drew",
+        "LastName": "Brees",
+        "Department": "Operation Management",
+        "Role": "Operation Specialist",
+        "Salary": "3200",
+        "ManagerID": 9
+    },
+    {
+        "ID": 14,
+        "FIrstName": "Patrick",
+        "LastName": "Mahomes",
+        "Department": "IT",
+        "Role": "IT Manager",
+        "Salary": "3000",
+        "ManagerID": null
+    }
+]
