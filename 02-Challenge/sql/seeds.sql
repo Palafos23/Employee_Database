@@ -22,7 +22,7 @@ VALUES(001, "Deisy", "Martinez", 001, null),
       (004, "Mark", "Sanchez", 004, 003),
       (005, "Kyler", "Murray", 005, 003),
       (006, "Tony", "Romo", 006, null),
-      (007, "Dak", "Prescott", 007, 006)
+      (007, "Dak", "Prescott", 007, 006);
 
 SELECT * FROM department;
 SELECT * FROM role;

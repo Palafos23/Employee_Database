@@ -26,7 +26,7 @@ FROM employee
 JOIN role ON employee.role_id = role.id JOIN department ON role.department_id = department.id ORDER BY role_id;
 
 --addDepartment
-INSERT INTO department(name) VALUES ('name');
+INSERT INTO department(name) VALUES ('department');
 
 --addRole
 INSERT INTO role(title, salary, department_id) 
@@ -39,7 +39,7 @@ INSERT INTO employee(first_name, last_name, role_id, manager_id) VALUES
 --updateEmployeeRole
 UPDATE employee 
 SET role_id = '001' 
-WHERE first_name = 'name' AND last_name = 'name';
+WHERE first_name = 'name1' AND last_name = 'name2';
 
 --deleteRow
 DELETE FROM employee WHERE id = 001;

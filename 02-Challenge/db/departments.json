@@ -10,45 +10,5 @@
     {
         "ID": 3,
         "Departments": "Sales"
-    },
-    {
-        "ID": 4,
-        "Departments": "Human Resources"
-    },
-    {
-        "ID": 5,
-        "Departments": "Operation Management"
-    },
-    {
-        "ID": 7,
-        "Departments": "IT"
-    },
-    {
-        "ID": 8,
-        "Departments": "abc"
-    },
-    {
-        "ID": 9,
-        "Departments": "[object Object]"
-    },
-    {
-        "ID": 10,
-        "Departments": "[object Object]"
-    },
-    {
-        "ID": 11,
-        "Departments": "[object Object]"
-    },
-    {
-        "ID": 12,
-        "Departments": "[object Object]"
-    },
-    {
-        "ID": 13,
-        "Departments": "department"
-    },
-    {
-        "ID": 14,
-        "Departments": ""
     }
 ]

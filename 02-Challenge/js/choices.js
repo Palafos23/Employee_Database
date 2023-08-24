@@ -1,6 +1,5 @@
 const inquirer = require('inquirer');
-const choices = require('./index');
-const db = require('../server');
+const db = require('./connection');
 const prompt = require('./questions');
 const fs = require('fs');
 
@@ -16,7 +15,7 @@ const viewDepartments = () => {
 
     fs.writeFile('../db/departments.json', JSON.stringify(results, null, 4), 'utf8', err => {
       if (err) {
-      console.log(`err`)
+      console.log(`err with creating file`)
       } else {
       console.log(`Departments file successful`)
       }
@@ -37,7 +36,7 @@ function viewRoles(){
 
         fs.writeFile('../db/roles.json', JSON.stringify(results, null, 4), 'utf8', err => {
             if (err) {
-            console.log(`err`)
+            console.log(`err with creating file`)
             } else {
             console.log(`roles file successful`)
             }
@@ -59,7 +58,7 @@ function viewEmployees(){
 
         fs.writeFile('../db/employees.json', JSON.stringify(results, null, 4), 'utf8', err => {
             if (err) {
-            console.log(`err`)
+            console.log(`err with creating file`)
             } else {
             console.log(`employees file successful`)
             }

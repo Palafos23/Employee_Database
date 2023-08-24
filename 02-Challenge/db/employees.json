@@ -1,8 +1,8 @@
 [
     {
-        "ID": 7,
-        "FIrstName": "Tony",
-        "LastName": "Romo",
+        "ID": 1,
+        "FIrstName": "Deisy",
+        "LastName": "Martinez",
         "Department": " Marketing",
         "Role": "marketing manager",
         "Salary": "1000",
@@ -31,62 +31,26 @@
         "FIrstName": "Mark",
         "LastName": "Sanchez",
         "Department": "Accounting",
-        "Role": "Accountant",
-        "Salary": "2000",
+        "Role": "Senior Accountant",
+        "Salary": "3000",
         "ManagerID": 3
     },
     {
         "ID": 5,
         "FIrstName": "Kyler",
         "LastName": "Murray",
-        "Department": "Sales",
-        "Role": "Sales Manager",
-        "Salary": "3500",
-        "ManagerID": null
+        "Department": "Accounting",
+        "Role": "Accountant",
+        "Salary": "2000",
+        "ManagerID": 3
     },
     {
         "ID": 6,
-        "FIrstName": "Tom",
-        "LastName": "Brady",
+        "FIrstName": "Tony",
+        "LastName": "Romo",
         "Department": "Sales",
-        "Role": "Sales Associate",
-        "Salary": "1500",
-        "ManagerID": 5
-    },
-    {
-        "ID": 1,
-        "FIrstName": "Deisy",
-        "LastName": "Martinez",
-        "Department": "Human Resources",
-        "Role": "HR Manager",
+        "Role": "Sales Manager",
         "Salary": "3500",
-        "ManagerID": null
-    },
-    {
-        "ID": 9,
-        "FIrstName": "Marcus",
-        "LastName": "Mariota",
-        "Department": "Operation Management",
-        "Role": "Operation Manager",
-        "Salary": "4000",
-        "ManagerID": null
-    },
-    {
-        "ID": 10,
-        "FIrstName": "Drew",
-        "LastName": "Brees",
-        "Department": "Operation Management",
-        "Role": "Operation Specialist",
-        "Salary": "3200",
-        "ManagerID": 9
-    },
-    {
-        "ID": 14,
-        "FIrstName": "Patrick",
-        "LastName": "Mahomes",
-        "Department": "IT",
-        "Role": "IT Manager",
-        "Salary": "3000",
         "ManagerID": null
     }
 ]

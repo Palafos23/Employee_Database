@@ -42,7 +42,7 @@ function choices() {
     })
     .catch((err) => {
       if (err) {
-        console.log('promblem with loading prompt')
+        console.log('problem with loading prompt')
       } else {
         console.log('another problem occurred')
       }
