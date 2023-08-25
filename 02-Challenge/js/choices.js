@@ -161,9 +161,10 @@ async function updateEmployeeRole(){
         }
     })
 }
-          
+    //async makes function return a promise      
 async function deleteRow(){
     const deleteRowData = prompt[4];
+    //await, waits until user inputs data to create the response and continue
     const response = await inquirer.prompt(deleteRowData);
     console.log(response);
     
