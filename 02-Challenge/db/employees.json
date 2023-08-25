@@ -27,15 +27,6 @@
         "ManagerID": null
     },
     {
-        "ID": 4,
-        "FIrstName": "Mark",
-        "LastName": "Sanchez",
-        "Department": "Accounting",
-        "Role": "Senior Accountant",
-        "Salary": "3000",
-        "ManagerID": 3
-    },
-    {
         "ID": 5,
         "FIrstName": "Kyler",
         "LastName": "Murray",
@@ -52,5 +43,14 @@
         "Role": "Sales Manager",
         "Salary": "3500",
         "ManagerID": null
+    },
+    {
+        "ID": 4,
+        "FIrstName": "Mark",
+        "LastName": "Sanchez",
+        "Department": "Sales",
+        "Role": "Sales Associate",
+        "Salary": "1500",
+        "ManagerID": 6
     }
 ]

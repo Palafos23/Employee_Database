@@ -40,7 +40,7 @@ var prompt = [
       },
       {
         type: 'input',
-        name: 'manager',
+        name: 'managerID',
         message: 'Enter Managerid:',
       }],
 
@@ -59,6 +59,11 @@ var prompt = [
         type: 'input',
         name: 'updateRole',
         message: 'Enter updated roleid:'
+      },
+      {
+        type: 'input',
+        name: 'managerID',
+        message: 'Enter updated managerid:'
       }],
 
     //deleteRow  
@@ -74,7 +79,7 @@ var prompt = [
         message: 'Enter id:'
       }
     ]
-]
+];
 
 
 module.exports = prompt;

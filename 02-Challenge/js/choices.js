@@ -12,7 +12,7 @@ const viewDepartments = () => {
     }else{     
     console.table(results);
     }
-
+    
     fs.writeFile('../db/departments.json', JSON.stringify(results, null, 4), 'utf8', err => {
       if (err) {
       console.log(`err with creating file`)
@@ -78,7 +78,7 @@ function addDepartment(){
          
           db.query(sql, (err, results) => {
             if(err){
-            console.log('\n Added Department');
+            console.log('\n did not add Department');
             }else{
             viewDepartments();
             console.log(results)
@@ -98,7 +98,7 @@ function addRole(){
          
           db.query(sql, (err, results) => {
             if(err){
-              console.log('\n Added Roles');
+              console.log('\n did not add Roles');
             }else{
             viewRoles();
             console.log(results)
@@ -115,10 +115,10 @@ function addEmployee(){
 
             .then((response) => {
              //the if statement below uses user input to place a null or int(EX. 001) into the manager variable
-                if(response.manager === null) {
+                if(response.managerID === null) {
                   var manager = null;
                 }else{
-                  var manager = response.manager;
+                  var manager = response.managerID;
                 }
               console.log(`${response.manager}`);
 
@@ -127,7 +127,7 @@ function addEmployee(){
            
             db.query(sql, (err, results) => {
               if(err) {
-                console.log('\n Added Employee');
+                console.log('\n did not add Employee');
               }else{
               viewEmployees();
               console.log(results)
@@ -137,56 +137,60 @@ function addEmployee(){
             )
           } 
           
-function updateEmployeeRole(){
-    const updateEmployeeRole = prompt[3];
-        inquirer
-            .prompt(updateEmployeeRole)
+async function updateEmployeeRole(){
+    const updateEmployeeRoleData = prompt[3];
+    const response = await inquirer.prompt(updateEmployeeRoleData);
+    console.log(response)
 
-            .then((response) => {
-              const sql = ` UPDATE employee 
-                            SET role_id = '${response.updateRole}' 
-                            WHERE first_name = '${response.firstName}' AND last_name = '${response.lastName}';`
+    if(response.managerID === null) {
+        var manager = null;
+      }else{
+        var manager = response.managerID;
+      }
+
+    const sql = ` UPDATE employee 
+                 SET role_id = '${response.updateRole}', manager_id = '${manager}' 
+                WHERE first_name = '${response.firstName}' AND last_name = '${response.lastName}';`
           
           
-            db.query(sql, (err, results) => {
-              if(err) {
-                console.log('\n updated employee');
-              }else{
-                viewEmployees();
-              }
-            })
-          })
-          }
-function deleteRow(){
-    const deleteRow = prompt[4];
-        inquirer
-            .prompt(deleteRow)
-             .then((response) => {
-              //can only delete from children to parent, not parent to children.
-              //Ex. if the user wants to delete the HR Manager role, the employee with the role
-              //HR Manager must be deleted and then the the actual role itself can be deleted 
-              //because it not longer has a child to rely on it.
-              const sql = `DELETE FROM ${response.tables} WHERE id = ${response.id};`
+    db.query(sql, (err, results) => {
+        if(err) {
+            console.log('\n did not update employee');
+        }else{
+            viewEmployees();
+        }
+    })
+}
           
-              console.log(`DELETE FROM ${response.tables} WHERE id = ${response.id};`)
+async function deleteRow(){
+    const deleteRowData = prompt[4];
+    const response = await inquirer.prompt(deleteRowData);
+    console.log(response);
+    
+    //can only delete from children to parent, not parent to children.
+    //Ex. if the user wants to delete the HR Manager role, the employee with the role
+    //HR Manager must be deleted and then the the actual role itself can be deleted 
+    //because it not longer has a child to rely on it.
+    const sql = `DELETE FROM ${response.tables} WHERE id = ${response.id};`
+          
+    console.log(`DELETE FROM ${response.tables} WHERE id = ${response.id};`)
             
-            db.query(sql, (err, results) => {
-            //uses an if statement with user inputed table to display matched table function.
-              if(err){
+        db.query(sql, (err, results) => {
+        //uses an if statement with user inputed table to display matched table function.
+            if(err){
                 console.log(err)
-              }else{
-              console.log('\n deleted row');
-              if(response.tables === 'department'){
+            }else{
+            console.log('\n deleted row');
+            if(response.tables === 'department'){
                 return viewDepartments();
-              }else if (response.tables === 'role'){
+            }else if (response.tables === 'role'){
                 return viewRoles();
-              }else{
+            }else{
                 return viewEmployees();
-              }
             }
-            })
-          })
-          }  
+        }
+    })
+}  
 
 
 module.exports = {viewDepartments, viewRoles, viewEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole, deleteRow};
