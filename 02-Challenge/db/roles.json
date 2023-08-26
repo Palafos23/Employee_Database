@@ -40,35 +40,5 @@
         "RoleID": 7,
         "Salary": "1500",
         "Department": "Sales"
-    },
-    {
-        "Role": "HR Manager",
-        "RoleID": 8,
-        "Salary": "3500",
-        "Department": "Human Resources"
-    },
-    {
-        "Role": "Operation Manager",
-        "RoleID": 10,
-        "Salary": "4000",
-        "Department": "Operation Management"
-    },
-    {
-        "Role": "Operation Specialist",
-        "RoleID": 11,
-        "Salary": "3200",
-        "Department": "Operation Management"
-    },
-    {
-        "Role": "IT Manager",
-        "RoleID": 15,
-        "Salary": "3000",
-        "Department": "IT"
-    },
-    {
-        "Role": "role",
-        "RoleID": 16,
-        "Salary": "1000",
-        "Department": "department"
     }
 ]

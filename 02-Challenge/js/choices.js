@@ -61,6 +61,7 @@ function viewEmployees(){
             console.log(`err with creating file`)
             } else {
             console.log(`employees file successful`)
+            choices()
             }
          })
 

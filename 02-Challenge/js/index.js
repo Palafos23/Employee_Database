@@ -12,7 +12,7 @@ function choices() {
     "Add Department", "Add A Role", "Add Employee", "Update Employee Role", "Delete Row"]
       },
     ])
-    .then((response) => {
+   .then((response) => {
         switch (response.directory) {
           case "View Departments":
             viewDepartments();
@@ -39,7 +39,25 @@ function choices() {
             deleteRow();
             break;
         }
-    })
+        async function loop(){
+          const directory = await response.directory;
+          console.log(directory)
+          if(directory === "View Departments"){
+             viewDepartments();
+             choices();
+          }else if(directory === "view Roles"){
+            viewRoles();
+            choices();
+          }else if(directory === "View Employees"){
+            viewEmployees();
+            choices();
+          }else{
+            return directory;
+          }
+        }
+        loop()
+      })
+
     .catch((err) => {
       if (err) {
         console.log('problem with loading prompt')
@@ -47,6 +65,6 @@ function choices() {
         console.log('another problem occurred')
       }
     });
-}
+  }
 
 module.exports = choices;
